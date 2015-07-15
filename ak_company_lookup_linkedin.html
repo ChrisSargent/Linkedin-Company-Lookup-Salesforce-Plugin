@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn JavaScript API Hello World</title>
+
+<!-- 1. Include the LinkedIn JavaScript API and define a onLoad callback function -->
+<script type="text/javascript" src="http://platform.linkedin.com/in.js">/*
+  api_key: 8re19a5y2ezz
+  onLoad: onLinkedInLoad
+  authorize: true
+*/</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://jquery-csv.googlecode.com/git/src/jquery.csv.js"></script>
+<script type="text/javascript" src="ak_company_in.js"></script>
+<style>
+p { font-family: Tahoma, Geneva, sans-serif; font-size: 13px; }
+</style>
+</head>
+
+<body>
+<!-- 3. Displays a button to let the viewer authenticate --> 
+<script type="IN/Login"></script>
+<div id="status"></div>
+<div>
+	<p>First, please select which values you'd like to match on:</p>
+	<select id="csvType" name="csvType" size="1">
+		<option value="linkedinID">Linkedin ID</option>
+		<option value="uniName">Universal Name</option>
+		<option value="emailDomain">Email Domain</option>
+	</select>
+</div>
+<!-- 4. Placeholder for the greeting -->
+<div>
+	<p>Then, select the CSV file with company names, LinkedIn IDs or email domains to update (values must be all lower-case). In the case of email domains, only the Linkedin IDs can be found</p>
+</div>
+<div id=inputs class=clearfix>
+	<input type=file id=files name=files[] multiple />
+</div>
+<div>
+	<p>The results will appear below as soon as you have selected your CSV file. Linkedin restricts to 500 API calls per day per user. Once you have the results, they can be copied in to a new CSV file:</p>
+</div>
+<div id="companyProfile"> </div>
+</body>
+</html>
